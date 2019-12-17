@@ -1,0 +1,118 @@
+</<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rock, paper, and scissors</title>
+  </head>
+
+  <body>
+    <p></p>
+    <script>
+
+      function computer_play(){
+        // returns random choice of rock paper or scissors
+        //let choice = Math.floor((Math.random() * 3) + 1);
+        // 1 = rock, 2 = paper, 3 = scissors
+        return Math.floor((Math.random() * 3) + 1);;
+      }
+
+      function play_round(player = ''){
+        // returns string that declares winner
+        // function is case insensitive
+        let computer_choice = computer_play();
+        let winner = '';
+        let decision = 0;
+        let player_choice = player.toUpperCase();
+
+        if(player_choice == 'ROCK'){
+          if(computer_choice == 1){
+            winner = 'Draw! I threw ' + player_choice.toLowerCase() + ' too!';
+            decision = 2;
+          }
+          else if(computer_choice == 2){
+            winner = 'You lose! I threw paper.';
+            decision = 0;
+          }
+          else{
+            winner = 'You win! I threw scissors.';
+            decision = 1;
+          }
+        }
+        else if(player_choice == 'PAPER'){
+          if(computer_choice == 1){
+            winner = 'You win! I threw rock.';
+            decision = 1;
+          }
+          else if(computer_choice == 2){
+            winner = 'Draw! I threw ' + player_choice.toLowerCase() + ' too!';
+            decision = 2;
+          }
+          else{
+            winner = 'You lose! I threw scissors.';
+            decision = 0;
+          }
+        }
+        else if(player_choice == 'SCISSORS'){
+          if(computer_choice == 1){
+            winner = 'You lose! I threw rock.';
+            decision = 0;
+          }
+          else if(computer_choice == 2){
+            winner = 'You win! I threw paper.';
+            decision = 1;
+          }
+          else{
+            winner = 'Draw! I threw ' + player_choice.toLowerCase() + ' too!';
+            decision = 0;
+          }
+        }
+        else{
+          winner = 'please enter \'rock\', \'paper\', or \'scissors\'';
+        }
+        //console.log(computer_choice);
+        return decision;
+      }
+
+      function game(){
+        // plays a 5 round game of rps
+        // keep score and report winner
+        let player_score = 0;
+        let computer_score = 0;
+        let draw_score = 0;
+        let rounds = 5;
+
+        for(let i = 0; i < rounds; i++){
+          let player = prompt('rock, paper, or scissors?');
+          if(player != null){
+            let decision = play_round(player);
+
+            if(decision == 0){
+              computer_score++;
+              console.log('You lose this round!');
+            }
+            else if(decision == 1){
+              player_score++;
+              console.log('You win this round!');
+            }
+            else{
+              draw_score++;
+              console.log('It\'s a draw!');
+            }
+          }
+        }
+
+        if(player_score > computer_score){
+          console.log('You won the game ' + player_score + '-' + computer_score);
+        }
+        else if(player_score < computer_score){
+          console.log('You lost the game ' + player_score + '-' + computer_score);
+        }
+        else{
+          console.log('We tied ' + player_score + '-' + computer_score);
+        }
+      }
+
+
+    </script>
+  </body>
+</html>
