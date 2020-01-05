@@ -1,0 +1,52 @@
+.type {
+  float: left;
+  margin: auto;
+}
+
+.type_button {
+
+}
+
+.type_image {
+
+}
+
+.container {
+  display: flex;
+  align-content: center;
+  margin: auto;
+  width: 50%;
+}
+
+#results {
+  margin: auto;
+  width: 50%;
+  padding: 4%;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+#grass {
+  background-color: green;
+}
+
+#water {
+  background-color: blue;
+}
+
+#fire {
+  background-color: red;
+}
+
+h1 {
+  margin: auto;
+  padding: 2%;
+  width: 50%;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 3em;
+}
+
+body {
+  background: #FFC77A;
+}
