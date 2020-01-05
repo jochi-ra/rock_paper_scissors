@@ -20,11 +20,14 @@ match_winner.style.fontFamily = 'inherit';
 
 round_winner.style.fontSize = '32px';
 score_display.style.fontSize = '32px';
-match_winner.style.fontSize = '32px';
+match_winner.style.fontSize = '40px';
 
 round_winner.style.padding = '4px';
 score_display.style.padding = '4px';
 match_winner.style.padding = '4px';
+
+match_winner.style.fontStyle = 'italic';
+match_winner.style.fontWeight = 'bolder';
 
 results_div.appendChild(round_winner);
 results_div.appendChild(score_display);
@@ -41,48 +44,48 @@ function play_round(player = '')
 {
   var computer_choice = computer_play();
   var player_choice = player.toUpperCase();
-  var winner_text;
+  var winner_text = 'Round: ';
   var decision;
 
   if(player_choice == 'GRASS'){
     if(computer_choice == 1){
-      winner_text = 'Draw! I chose ' + player_choice + ' too!';
+      winner_text += 'Draw! I chose ' + player_choice + ' too!';
       decision = 2;
     }
     else if(computer_choice == 2){
-      winner_text = 'You lose! I chose FIRE.';
+      winner_text += 'You lose! I chose FIRE.';
       decision = 0;
     }
     else{
-      winner_text = 'You win! I chose WATER.';
+      winner_text += 'You win! I chose WATER.';
       decision = 1;
     }
   }
   else if(player_choice == 'FIRE'){
     if(computer_choice == 1){
-      winner_text = 'You win! I chose GRASS.';
+      winner_text += 'You win! I chose GRASS.';
       decision = 1;
     }
     else if(computer_choice == 2){
-      winner_text = 'Draw! I chose ' + player_choice + ' too!';
+      winner_text += 'Draw! I chose ' + player_choice + ' too!';
       decision = 2;
     }
     else{
-      winner_text = 'You lose! I chose WATER.';
+      winner_text += 'You lose! I chose WATER.';
       decision = 0;
     }
   }
   else if(player_choice == 'WATER'){
     if(computer_choice == 1){
-      winner_text = 'You lose! I chose GRASS.';
+      winner_text += 'You lose! I chose GRASS.';
       decision = 0;
     }
     else if(computer_choice == 2){
-      winner_text = 'You win! I chose FIRE.';
+      winner_text += 'You win! I chose FIRE.';
       decision = 1;
     }
     else{
-      winner_text = 'Draw! I chose ' + player_choice + ' too!';
+      winner_text += 'Draw! I chose ' + player_choice + ' too!';
       decision = 2;
     }
   }

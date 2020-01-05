@@ -4,11 +4,18 @@
 }
 
 .type_button {
+  border-radius: 50%;
+}
 
+.type_button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.25), 0 17px 50px 0 rgba(0,0,0,0.5);
 }
 
 .type_image {
 
+}
+
+.type_image:hover {
 }
 
 .container {
@@ -22,7 +29,7 @@
   margin: auto;
   width: 50%;
   padding: 4%;
-  text-align: center;
+  text-align: right;
   font-family: Helvetica;
 }
 
@@ -42,7 +49,7 @@ h1 {
   margin: auto;
   padding: 2%;
   width: 50%;
-  text-align: center;
+  text-align: left;
   font-family: Helvetica;
   font-size: 3em;
 }
